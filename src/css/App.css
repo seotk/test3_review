@@ -1,0 +1,210 @@
+@charset 'utf-8';
+
+:root {
+  --mw: 1400px;
+  --gap-s: 1rem;
+  --gap-b: 4rem;
+}
+.mw {
+  max-width: var(--mw);
+  width: calc(100% - var(--gap-s));
+  margin: var(--gap-b) auto;
+}
+header.hd {
+  margin: 2rem auto 1rem;
+  display: flex;
+  align-items: center;
+}
+.hd.bar {
+  border-bottom: 1px solid #eee;
+}
+.hd h1 {
+  width: 150px;
+}
+.hd h1 img {
+  width: 100%;
+}
+.hd .gnb {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--gap-s);
+  position: relative;
+}
+.hd .gnb::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 50%;
+  background-color: #888;
+  right: 0;
+  top: 50%;
+  transform: translatey(-50%);
+}
+.hd .gnb a {
+  padding: var(--gap-s);
+  transition: 0.3s;
+}
+.hd .gnb a:hover {
+  background-color: #eee;
+}
+.hd .gnb a.on {
+  background-color: tomato;
+}
+.hd .person {
+  color: #999;
+  padding-left: var(--gap-s);
+}
+.hd .person a {
+  display: inline-block;
+  padding: var(--gap-s);
+}
+.hd .person a:hover {
+  color: black;
+}
+
+/* 메인 이벤트 배너 영역 */
+.MainEvent .eventList {
+  position: relative;
+  height: 30vh;
+  border-radius: var(--gap-s);
+  overflow: hidden;
+}
+.MainEvent .eventList > * {
+  position: absolute;
+}
+.MainEvent .eventList img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.MainEvent .eventList .eventInfo {
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--gap-s);
+}
+
+/* MainTopList 메인 상위 상품 */
+.MainTopList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MainTopList h2 {
+  padding: var(--gap-s) 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.MainTopList .listCon {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.MainTopList .listCon > li {
+  width: calc(100% / 3 - var(--gap-s));
+  margin-right: calc(var(--gap-s) + var(--gap-s) / 2);
+  position: relative;
+}
+
+.MainTopList .listCon > li:nth-of-type(3n) {
+  margin-right: 0;
+}
+.MainTopList .card {
+}
+.ProductCard {
+  position: relative;
+}
+
+.ProductCard .img {
+  overflow: hidden;
+  position: relative;
+  padding-top: 100%;
+  border-radius: var(--gap-s);
+}
+
+.ProductCard .img > * {
+  position: absolute;
+}
+.ProductCard .btn_add {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+}
+.ProductCard .img img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ProductCard .img .discount {
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: tomato;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.ProductCard .img .addCart {
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: -100%;
+  width: 100%;
+  padding: var(--gap-s);
+  text-align: center;
+  transition: 0.3s;
+}
+.MainTopList .list:hover .addCart {
+  bottom: 0;
+}
+
+.Shop {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Shop h2 {
+  width: 100%;
+  padding: var(--gap-s) 0;
+}
+.Shop .btnCon {
+  width: 200px;
+  padding-right: var(--gap-s);
+}
+.Shop .btnCon .btn {
+  width: 100%;
+}
+.Shop .listCon {
+  width: calc(100% - 300px);
+  display: flex;
+  flex-wrap: wrap;
+}
+.Shop .listCon > li {
+  width: calc(100% / 4 - var(--gap-s));
+  margin-right: calc(var(--gap-s) + var(--gap-s) / 2);
+}
+
+/* 디테일 영역 */
+.detailCon {
+  display: flex;
+  justify-content: space-between;
+}
+.detailCon .img {
+  width: 45%;
+}
+.detailCon .img img {
+  width: 100%;
+}
+.detailCon .info {
+  width: calc(55% - var(--gap-b));
+}
